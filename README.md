@@ -26,7 +26,6 @@ OPTIONS:
    -t         Trap TERM signal
    -e         (default) Trap EXIT signal
    -h         Show this help message
-EOF
 ```
 
 ## Install
