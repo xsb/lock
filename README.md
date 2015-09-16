@@ -32,5 +32,5 @@ Options:
 
 
 ```
-	sudo cp lock /usr/local/bin/
+sudo cp lock /usr/local/bin/
 ```
