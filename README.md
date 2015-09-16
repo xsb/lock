@@ -31,8 +31,6 @@ Options:
 ## Install
 
 
-```sh
-curl -s https://raw.githubusercontent.com/xsb/lock/master/lock > /tmp/lock \
-	&& sudo chmod a+x /tmp/lock \
-	&& sudo cp /tmp/lock /usr/local/bin/
+```
+	sudo cp lock /usr/local/bin/
 ```
