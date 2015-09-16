@@ -1,0 +1,39 @@
+#!/bin/bash
+set -e
+
+LOCKFILE="/tmp/$(basename $0).lock"
+
+help() {
+	cat << EOF
+Usage: lock [-s <text>] [-i] [-t] [-e]
+
+OPTIONS:
+   -s <text>  (optional) Personalize error text
+   -i         (optional) Trap INT signal
+   -t         (optional) Trap TERM signal
+   -e         (default) Trap EXIT signal
+   -h         Show this help message
+EOF
+exit
+}
+
+ERROR_TEXT="Error: $0 already running and locked by $LOCKFILE"
+SIGNALS=('EXIT')
+
+while getopts "s:iteh" OPTION; do
+	case $OPTION in
+		s) ERROR_TEXT=${OPTARG} ;;
+		i) SIGNALS+=('INT') ;;
+		t) SIGNALS+=('TERM') ;;
+		e) ;;
+		h) help ;;
+	esac
+done
+
+if [ -f "$LOCKFILE" ]; then
+	echo "$ERROR_TEXT"
+	exit 1
+else
+	trap "rm -f $LOCKFILE; exit" ${SIGNALS[@]}
+	echo $$ > ${LOCKFILE}
+fi
