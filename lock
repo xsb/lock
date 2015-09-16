@@ -7,7 +7,7 @@ help() {
 	cat << EOF
 Usage: lock [-s <text>] [-i] [-t] [-e]
 
-OPTIONS:
+Options:
    -s <text>  (optional) Personalize error text
    -i         (optional) Trap INT signal
    -t         (optional) Trap TERM signal

@@ -20,7 +20,7 @@ Start your script with `. lock` to execute lock code as part of your script.
 $ lock -h
 Usage: lock [-s <text>] [-i] [-t] [-e]
 
-OPTIONS:
+Options:
    -s <text>  Personalize error text
    -i         Trap INT signal
    -t         Trap TERM signal
