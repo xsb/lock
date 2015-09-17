@@ -1,10 +1,6 @@
 # lock
 
-Simple locking to avoid simultaneous executions of a shell script.
-
-## Basic usage
-
-Start your script with `. lock` to execute lock code as part of your script.
+Simple locking for shell scripts. Start with `. lock` to avoid simultaneous executions.
 
 
 ```sh
@@ -32,5 +28,5 @@ Options:
 
 
 ```
-sudo cp lock /usr/local/bin/
+sudo cp lock /usr/local/bin/lock
 ```
